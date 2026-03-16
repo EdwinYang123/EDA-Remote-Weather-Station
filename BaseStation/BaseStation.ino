@@ -28,7 +28,7 @@
 #include <WiFi.h>
 
 // ---- Pin Configuration ----
-#define LED_PIN 8  // Onboard LED on many ESP32-C3 boards; change if using external LED
+#define LED_PIN 10  // Onboard LED on Seeed Studio XIAO ESP32-C3
 
 // ---- Shared Data Structure (must match WeatherStation.ino) ----
 typedef struct WeatherPacket {

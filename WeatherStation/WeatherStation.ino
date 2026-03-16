@@ -35,7 +35,7 @@
 // ---- Pin Configuration ----
 #define SDA_PIN  D1
 #define SCL_PIN  D0
-#define LED_PIN  8   // Onboard LED on many ESP32-C3 boards; change if using external LED
+#define LED_PIN  10  // Onboard LED on Seeed Studio XIAO ESP32-C3
 
 // ---- Base Station MAC Address ----
 // Run BaseStation.ino first, then copy the MAC it prints and replace the bytes below.
@@ -73,7 +73,7 @@ void ledBlink(int times, int onMs, int offMs) {
 
 // ---- ESP-NOW Send Callback ----
 // Called after each esp_now_send() to report delivery status.
-void onDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
+void onDataSent(const wifi_tx_info_t *tx_info, esp_now_send_status_t status) {
   deliverySuccess = (status == ESP_NOW_SEND_SUCCESS);
   deliveryDone    = true;
 }
